@@ -3,7 +3,10 @@ package com.cris.sec.registration.services.impl;
 import com.cris.sec.registration.model.dtos.UserDTO;
 import com.cris.sec.registration.model.entities.User;
 import com.cris.sec.registration.services.IUserMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserMapperImpl implements IUserMapper {
@@ -24,8 +27,9 @@ public class UserMapperImpl implements IUserMapper {
         user.setNames(userDTO.getNames());
         user.setLastNames(userDTO.getLastNames());
         user.setEmail(userDTO.getEmail());
-        user.setPassword(userDTO.getPassword());
-        user.setMatchingPassword(userDTO.getMatchingPassword());
+        user.setPassword(new BCryptPasswordEncoder().encode(userDTO.getPassword()));
+        user.setMatchingPassword(new BCryptPasswordEncoder().encode(userDTO.getMatchingPassword()));
+        user.setRoles(List.of("USER"));
         return user;
     }
 }

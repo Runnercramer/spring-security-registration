@@ -127,31 +127,31 @@ input.form-control:focus {
         <div class="form-group">
             <label>Nombres</label>
             <input type="text" th:field="*{names}" class="form-control" placeholder="Ingresa tus nombres"/>
-            <p th:each="error : ${#fields.errors('names')}" class="error" th:text="${error}"></p>
+            <p th:each="error : ${#fields.errors('names')}" class="alert alert-danger" th:text="${error}"></p>
         </div>
 
         <div class="form-group">
             <label>Apellidos</label>
             <input type="text" th:field="*{lastNames}" class="form-control" placeholder="Ingresa tus apellidos"/>
-            <p th:each="error : ${#fields.errors('lastNames')}" class="error" th:text="${error}"></p>
+            <p th:each="error : ${#fields.errors('lastNames')}" class="alert alert-danger" th:text="${error}"></p>
         </div>
 
         <div class="form-group">
             <label>Email</label>
             <input type="email" th:field="*{email}" class="form-control" placeholder="Ingresa tu correo"/>
-            <p th:each="error : ${#fields.errors('email')}" class="error" th:text="${error}"></p>
+            <p th:each="error : ${#fields.errors('email')}" class="alert alert-danger" th:text="${error}"></p>
         </div>
 
         <div class="form-group">
             <label>Contraseña</label>
             <input type="password" th:field="*{password}" class="form-control" placeholder="Ingresa tu contraseña"/>
-            <p th:each="error : ${#fields.errors('password')}" class="error" th:text="${error}"></p>
+            <p th:each="error : ${#fields.errors('password')}" class="alert alert-danger" th:text="${error}"></p>
         </div>
 
         <div class="form-group">
             <label>Confirmar contraseña</label>
             <input type="password" th:field="*{matchingPassword}" class="form-control" placeholder="Confirma tu contraseña"/>
-            <p th:each="error : ${#fields.errors('matchingPassword')}" class="error" th:text="${error}"></p>
+            <p th:each="error : ${#fields.errors('matchingPassword')}" class="alert alert-danger" th:text="${error}"></p>
         </div>
 
         <button type="submit" class="submit-btn">¡Regístrate!</button>
