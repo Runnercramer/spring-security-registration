@@ -19,6 +19,11 @@ public class User {
     private String password;
     private String matchingPassword;
     private List<String> roles;
+    private boolean enabled;
+
+    public User(){
+        this.enabled = false;
+    }
 
     public List<String> getRoles() {
         return roles;
@@ -74,5 +79,13 @@ public class User {
 
     public void setMatchingPassword(String matchingPassword) {
         this.matchingPassword = matchingPassword;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }

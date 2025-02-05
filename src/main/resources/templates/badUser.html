@@ -67,13 +67,8 @@
     </style>
 </head>
 <body>
-<div class="main-container">
-    <h1>¡Registro Exitoso!</h1>
-
-    <p class="description">¡Bienvenido! Tu registro ha sido exitoso. Ahora puedes iniciar sesión para acceder a tu cuenta.</p>
-
-    <a href="/user/login" class="cta-btn">Iniciar sesión</a>
-
-</div>
+<h1 th:text="${param.message[0]}>Error Message</h1>
+    <a th:href="@{/registration.html}"
+th:text="#{label.form.loginSignUp}">signup</a>
 </body>
 </html>

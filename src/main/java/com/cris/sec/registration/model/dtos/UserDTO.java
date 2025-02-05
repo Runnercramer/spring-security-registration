@@ -26,6 +26,20 @@ public class UserDTO {
     @NotBlank(message = "El campo 'Confirmar contraseña' no puede estar vacío")
     private String matchingPassword;
 
+    private boolean enabled;
+
+    public UserDTO(){
+        this.enabled = false;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getNames() {
         return names;
     }
